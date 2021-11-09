@@ -2,32 +2,21 @@ const apiRouter = require('express').Router();
 const fs = require('fs');
 const uuid = require('../helpers/uuid')
 
-
-
     //get route
     apiRouter.get('/notes', (req, res) => {
-        // Log that a GET request was received
         console.info(`${req.method} request received to get notes`);
-
-        // Read notes
+            //reads the data
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
-        
         res.json(data);
-
-
-
     });
 
 
     //post route
     apiRouter.post('/notes', (req, res) => {
-        // Log that a POST request was received
-        console.info(`${req.method} request received to add a note`);
-
-        // Destructuring assignment for the items in req.body
+        console.info(`${req.method} request received to add note`);
         const newNote = req.body;
 
-        //assign an id
+        //assign a random id
         newNote.id = uuid()
 
         // Read notes 
@@ -35,12 +24,7 @@ const uuid = require('../helpers/uuid')
 
         // Push new note to file
         data.push(newNote);
-
-
         fs.writeFileSync('./db/db.json', JSON.stringify(data))
-
-
-        console.log("successful post!");
         res.json(data);
 
     });
@@ -49,12 +33,11 @@ const uuid = require('../helpers/uuid')
     //delete
     apiRouter.delete("/notes/:id", (req, res) => {
 
-        // Fetched id to delete
+        // Fetched id
         let noteId = request.params.id.toString();
 
         console.log(`DELETE note request for noteId: ${noteId}`);
 
-        // Read data from 'db.json' file
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
 
         // grab all notes without that id

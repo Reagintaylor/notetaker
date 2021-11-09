@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 //for the router
-
+app.use('/api',apiRouter); 
 
 //Getting the file paths and joining them
 app.get('/', (req, res) =>
