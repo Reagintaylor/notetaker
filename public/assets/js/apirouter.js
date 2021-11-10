@@ -1,6 +1,6 @@
 const apiRouter = require('express').Router();
 const fs = require('fs');
-const uuid = require('../helpers/uuid')
+const uuid = require('./uuid') // change for uuid
 
     //get route
     apiRouter.get('/notes', (req, res) => {
@@ -53,4 +53,4 @@ const uuid = require('../helpers/uuid')
     });
 
 
-module.exports= apiRouter;
+module.exports = apiRouter;

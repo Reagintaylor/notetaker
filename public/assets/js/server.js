@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const fs = require('fs');
 const notes = ('./db/db.json')
-const apiRouter = ('./public/assets/js/apirouter.js')
+const apiRouter = ('./apirouter')
 
 app = express();
 const PORT = 3001;
