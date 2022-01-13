@@ -1,11 +1,12 @@
 const apiRouter = require('express').Router();
 const fs = require('fs');
-const uuid = require('./uuid') // change for uuid
+const uuid = require('../helpers/uuid') // change for uuid
 
     //get route
     apiRouter.get('/notes', (req, res) => {
         console.info(`${req.method} request received to get notes`);
             //reads the data
+            
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
         res.json(data);
     });
