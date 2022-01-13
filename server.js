@@ -1,8 +1,6 @@
 const path = require('path');
 const express = require('express');
-const fs = require('fs');
-const notes = ('./db/db.json')
-const apiRouter = ('./apirouter')
+const apiRouter = require('./routes/apirouter')
 
 app = express();
 const PORT = 3001;
