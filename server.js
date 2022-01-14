@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const apiRouter = require('./routes/apirouter')
+const apiRouter = require('./routes/apirouter');
 
 app = express();
 const PORT = 3001;
@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 //for the router
-app.use('/api',apiRouter); 
+app.use('/api', apiRouter); 
 
 //Getting the file paths and joining them
 app.get('/', (req, res) =>
