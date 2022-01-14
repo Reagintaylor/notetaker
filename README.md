@@ -7,7 +7,27 @@
 
 ## Table of Contents
 
+- [Technologies Used](#Technologies-Used)
+- [Installation](#Installation)
+- [Links](#Links)
+
+
 
 ## Technologies Used
 
 - The technologies used in this app were HTML, CSS, JavaScript, Node.js, Expres.js, npm 'fs' package
+
+## Installation
+
+```
+npm init
+npm install -y
+node server 
+```
+- Copy and paste the local host url into your browser
+
+## Links 
+![Screenshot of app](/public/assets/img/screenshot.png)
+- [Heroku Link](https://young-spire-94098.herokuapp.com/)
+- [Github Link](https://github.com/Reagintaylor/notetaker)
+
